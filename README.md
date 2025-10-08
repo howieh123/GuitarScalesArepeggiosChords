@@ -3,7 +3,6 @@
 An interactive fretboard application for guitar players to visualize and learn scales, arpeggios, and chords. Select a root note and a musical pattern to see it instantly mapped out on the guitar neck, making complex music theory easy to understand.  Please ignore the mispelling of Arpeggio.
 
 ![Screenshot of Guitar Companion App](AppScreenshot.png)
-*(Note: You can replace `placeholder.png` with a screenshot of your application)*
 
 ---
 
