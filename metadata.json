@@ -1,0 +1,5 @@
+{
+  "name": "Guitar Companion: Scales, Chords & Arpeggios-2",
+  "description": "An interactive fretboard application for guitar players to visualize and learn scales, arpeggios, and chords. Select a root note and a musical structure to see it instantly mapped out on the guitar neck.",
+  "requestFramePermissions": []
+}
