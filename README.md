@@ -3,8 +3,13 @@
 </div>
 
 
+This application was createed using Google AI Studio -- Build section.  It took about 5 minutes to get the fretboard and pulldowns correct and then the AI had to fix 2 mistakes that prevented it from running locally
+
+
 
 ## Run Locally
+
+
 
 **Prerequisites:**  Node.js
 
