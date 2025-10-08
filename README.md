@@ -1,6 +1,6 @@
 # Guitar Companion: Interactive Fretboard Visualizer
 
-An interactive fretboard application for guitar players to visualize and learn scales, arpeggios, and chords. Select a root note and a musical pattern to see it instantly mapped out on the guitar neck, making complex music theory easy to understand.
+An interactive fretboard application for guitar players to visualize and learn scales, arpeggios, and chords. Select a root note and a musical pattern to see it instantly mapped out on the guitar neck, making complex music theory easy to understand.  Please ignore the mispelling of Arpeggio.
 
 ![Screenshot of Guitar Companion App](placeholder.png)
 *(Note: You can replace `placeholder.png` with a screenshot of your application)*
@@ -47,8 +47,8 @@ You need to have [Node.js](https://nodejs.org/en/) (which includes npm) installe
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/your-username/guitar-companion.git
-    cd guitar-companion
+    git clone https://github.com/howieh123/GuitarScalesArepeggiosChords.git
+    cd GuitarScalesArepeggiosChords.git
     ```
 
 2.  **Install NPM packages:**
