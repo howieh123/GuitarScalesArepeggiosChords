@@ -48,7 +48,7 @@ You need to have [Node.js](https://nodejs.org/en/) (which includes npm) installe
 1.  **Clone the repository:**
     ```sh
     git clone https://github.com/howieh123/GuitarScalesArepeggiosChords.git
-    cd GuitarScalesArepeggiosChords.git
+    cd GuitarScalesArepeggiosChords
     ```
 
 2.  **Install NPM packages:**
