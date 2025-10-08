@@ -13,8 +13,9 @@ View your app in AI Studio: https://ai.studio/apps/drive/1up2c6i4aeairSre5Fnpn-z
 **Prerequisites:**  Node.js
 
 
-1. Install dependencies:
+1. Clone the Repo
+   `git clone https://github.com/howieh123/GuitarScalesArepeggiosChords.git` 
+2. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
