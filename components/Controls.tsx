@@ -1,7 +1,6 @@
-
 import React from 'react';
-import type { Note, DisplayType, Scale, Arpeggio, Chord } from '../types';
-import { NOTES, SCALES, ARPEGGIOS, CHORDS } from '../constants';
+import type { Note, DisplayType, Scale, Arpeggio, Chord, KeyType, DiatonicInterval, StringPair } from '../types';
+import { NOTES, SCALES, ARPEGGIOS, CHORDS, KEY_TYPES, DIATONIC_INTERVALS, STRING_PAIRS } from '../constants';
 
 interface ControlsProps {
     rootNote: Note;
@@ -9,9 +8,15 @@ interface ControlsProps {
     selectedScale: Scale;
     selectedArpeggio: Arpeggio;
     selectedChord: Chord;
+    keyType: KeyType;
+    selectedDiatonicInterval: DiatonicInterval;
+    selectedStringPair: StringPair;
     onRootNoteChange: (note: Note) => void;
     onDisplayTypeChange: (type: DisplayType) => void;
     onPatternChange: (pattern: Scale | Arpeggio | Chord) => void;
+    onKeyTypeChange: (keyType: KeyType) => void;
+    onDiatonicIntervalChange: (interval: DiatonicInterval) => void;
+    onStringPairChange: (stringPair: StringPair) => void;
 }
 
 const selectBaseClasses = "w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-3 focus:ring-cyan-500 focus:border-cyan-500 transition duration-150 ease-in-out text-base";
@@ -27,10 +32,12 @@ const Selector: React.FC<{ label: string; value: string; onChange: (e: React.Cha
 
 export const Controls: React.FC<ControlsProps> = ({
     rootNote, displayType, selectedScale, selectedArpeggio, selectedChord,
-    onRootNoteChange, onDisplayTypeChange, onPatternChange
+    keyType, selectedDiatonicInterval, selectedStringPair,
+    onRootNoteChange, onDisplayTypeChange, onPatternChange,
+    onKeyTypeChange, onDiatonicIntervalChange, onStringPairChange
 }) => {
     
-    const getPatternSelector = () => {
+    const renderPatternSelector = () => {
         switch (displayType) {
             case 'scale':
                 return <Selector label="Scale" value={selectedScale} onChange={e => onPatternChange(e.target.value as Scale)} options={Object.keys(SCALES)} />;
@@ -44,7 +51,7 @@ export const Controls: React.FC<ControlsProps> = ({
     };
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap gap-6 items-end">
             <Selector
                 label="Root Note"
                 value={rootNote}
@@ -55,9 +62,15 @@ export const Controls: React.FC<ControlsProps> = ({
                 label="Display Type"
                 value={displayType}
                 onChange={e => onDisplayTypeChange(e.target.value as DisplayType)}
-                options={['scale', 'arpeggio', 'chord']}
+                options={['scale', 'arpeggio', 'chord', 'diatonicIntervals']}
             />
-            {getPatternSelector()}
+            {displayType === 'diatonicIntervals' ? (
+                <>
+                    <Selector label="Key" value={keyType} onChange={e => onKeyTypeChange(e.target.value as KeyType)} options={KEY_TYPES} />
+                    <Selector label="Interval" value={selectedDiatonicInterval} onChange={e => onDiatonicIntervalChange(e.target.value as DiatonicInterval)} options={DIATONIC_INTERVALS} />
+                    <Selector label="String Pair" value={selectedStringPair} onChange={e => onStringPairChange(e.target.value as StringPair)} options={STRING_PAIRS} />
+                </>
+            ) : renderPatternSelector()}
         </div>
     );
 };

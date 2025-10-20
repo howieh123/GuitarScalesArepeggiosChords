@@ -1,4 +1,3 @@
-
 import type { Note } from './types';
 
 export const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'] as const;
@@ -43,4 +42,17 @@ export const CHORDS = {
     'Dominant 7th': [0, 4, 7, 10],
     'Suspended 2nd': [0, 2, 7],
     'Suspended 4th': [0, 5, 7],
+};
+
+export const KEY_TYPES = ['Major', 'Minor'] as const;
+export const DIATONIC_INTERVALS = ['2nd', '3rd', '4th', '5th', '6th', '7th'] as const;
+export const STRING_PAIRS = ['6 & 4', '5 & 3', '4 & 2', '3 & 1'] as const;
+
+export const DIATONIC_INTERVAL_MAP: Record<typeof DIATONIC_INTERVALS[number], number> = {
+    '2nd': 2,
+    '3rd': 3,
+    '4th': 4,
+    '5th': 5,
+    '6th': 6,
+    '7th': 7,
 };

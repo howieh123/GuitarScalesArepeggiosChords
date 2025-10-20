@@ -33,10 +33,19 @@ const NoteCircle: React.FC<{ note: FretboardNote }> = ({ note }) => {
     const baseClasses = "absolute flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full text-white font-bold text-sm transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 shadow-lg";
     const rootClasses = "bg-cyan-500 ring-2 ring-cyan-200";
     const nonRootClasses = "bg-gray-200 text-gray-800";
+    const startClasses = "bg-yellow-400 text-gray-800 ring-2 ring-yellow-100";
+    const endClasses = "bg-orange-400 text-white ring-2 ring-orange-100";
+
+    const getNoteClasses = () => {
+        if (note.isRoot) return rootClasses;
+        if (note.role === 'start') return startClasses;
+        if (note.role === 'end') return endClasses;
+        return nonRootClasses;
+    };
     
     return (
         <div 
-            className={`${baseClasses} ${note.isRoot ? rootClasses : nonRootClasses}`}
+            className={`${baseClasses} ${getNoteClasses()}`}
             style={{ top: `${stringPosition}%`, left: `${fretPosition}%` }}
         >
             {note.note}
